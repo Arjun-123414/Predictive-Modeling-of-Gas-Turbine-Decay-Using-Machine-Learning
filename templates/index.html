@@ -4,27 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Air Turbine Decay Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 24px;
+            color: #004d99;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #004d99;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #003366;
+        }
+
+        /* Ensuring responsive design for small screens */
+        @media (max-width: 600px) {
+            .form-container {
+                width: 90%;
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>Predict GT Turbine Decay State Coefficient</h1>
-    <form action="/predict" method="post">
-        <input type="text" name="lever_position" placeholder="Lever Position"><br>
-        <input type="text" name="ship_speed" placeholder="Ship Speed"><br>
-        <input type="text" name="gt_shaft_torque" placeholder="GT Shaft Torque"><br>
-        <input type="text" name="gt_rate_revolutions" placeholder="GT Rate Revolutions"><br>
-        <input type="text" name="gg_rate_revolutions" placeholder="GG Rate Revolutions"><br>
-        <input type="text" name="starboard_propeller_torque" placeholder="Starboard Propeller Torque"><br>
-        <input type="text" name="port_propeller_torque" placeholder="Port Propeller Torque"><br>
-        <input type="text" name="turbine_exit_temp" placeholder="Turbine Exit Temp"><br>
-        <input type="text" name="compressor_inlet_temp" placeholder="Compressor Inlet Temp"><br>
-        <input type="text" name="compressor_outlet_temp" placeholder="Compressor Outlet Temp"><br>
-        <input type="text" name="turbine_exit_pressure" placeholder="Turbine Exit Pressure"><br>
-        <input type="text" name="compressor_inlet_pressure" placeholder="Compressor Inlet Pressure"><br>
-        <input type="text" name="compressor_outlet_pressure" placeholder="Compressor Outlet Pressure"><br>
-        <input type="text" name="exhaust_gas_pressure" placeholder="Exhaust Gas Pressure"><br>
-        <input type="text" name="turbine_injection_control" placeholder="Turbine Injection Control"><br>
-        <input type="text" name="fuel_flow" placeholder="Fuel Flow"><br>
-        <button type="submit">Predict</button>
-    </form>
+
+    <div class="form-container">
+        <form action="/predict" method="post">
+            <input type="text" name="lever_position" placeholder="Lever Position" required><br>
+            <input type="text" name="ship_speed" placeholder="Ship Speed" required><br>
+            <input type="text" name="gt_shaft_torque" placeholder="GT Shaft Torque" required><br>
+            <input type="text" name="gt_rate_revolutions" placeholder="GT Rate Revolutions" required><br>
+            <input type="text" name="gg_rate_revolutions" placeholder="GG Rate Revolutions" required><br>
+            <input type="text" name="starboard_propeller_torque" placeholder="Starboard Propeller Torque" required><br>
+            <input type="text" name="port_propeller_torque" placeholder="Port Propeller Torque" required><br>
+            <input type="text" name="turbine_exit_temp" placeholder="Turbine Exit Temp" required><br>
+            <input type="text" name="compressor_inlet_temp" placeholder="Compressor Inlet Temp" required><br>
+            <input type="text" name="compressor_outlet_temp" placeholder="Compressor Outlet Temp" required><br>
+            <input type="text" name="turbine_exit_pressure" placeholder="Turbine Exit Pressure" required><br>
+            <input type="text" name="compressor_inlet_pressure" placeholder="Compressor Inlet Pressure" required><br>
+            <input type="text" name="compressor_outlet_pressure" placeholder="Compressor Outlet Pressure" required><br>
+            <input type="text" name="exhaust_gas_pressure" placeholder="Exhaust Gas Pressure" required><br>
+            <input type="text" name="turbine_injection_control" placeholder="Turbine Injection Control" required><br>
+            <input type="text" name="fuel_flow" placeholder="Fuel Flow" required><br>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
 </body>
 </html>
